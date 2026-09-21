@@ -1,1 +1,2 @@
-## Tabla de validación 
+# Hilo Rojo
+## ¿Quiénes somos?
