@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carta de control — Hilo Rojo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --border: #ecdcc8;
+  --text-primary: #2c1b12;
+  --text-secondary: #6b5644;
+  --text-muted: #a08a74;
+  --maroon: #7a1f24;
+  --maroon-soft: #f6e2df;
+  --coral: #e2653b;
+  --coral-soft: #fce4d6;
+  --amber: #f2a134;
+  --amber-soft: #fdecc8;
+  --pink: #e0577e;
+  --pink-soft: #fbe1e9;
+  --tan: #e4d3c1;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing: border-box;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #ffffff;
+    --card: #ffffff;
+    --border: #ecdcc8;
+    --text-primary: #2c1b12;
+    --text-secondary: #6b5644;
+    --text-muted: #a08a74;
+    --maroon: #7a1f24;
+    --maroon-soft: #f6e2df;
+    --coral: #e2653b;
+    --coral-soft: #fce4d6;
+    --amber: #f2a134;
+    --amber-soft: #fdecc8;
+    --pink: #e0577e;
+    --pink-soft: #fbe1e9;
+    --tan: #e4d3c1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --border: #ecdcc8;
+  --text-primary: #2c1b12;
+  --text-secondary: #6b5644;
+  --text-muted: #a08a74;
+  --maroon: #7a1f24;
+  --maroon-soft: #f6e2df;
+  --coral: #e2653b;
+  --coral-soft: #fce4d6;
+  --amber: #f2a134;
+  --amber-soft: #fdecc8;
+  --pink: #e0577e;
+  --pink-soft: #fbe1e9;
+  --tan: #e4d3c1;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.brand-name {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(34px, 6vw, 48px);
+  color: var(--maroon);
+  font-weight: 700;
+  line-height: 1;
+}
+.brand-since {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--coral);
+  font-weight: 700;
+  display: block;
+  margin-top: -6px;
+}
+header .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--coral);
+  font-weight: 700;
+  margin: 10px 0 6px;
+}
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(22px, 3.6vw, 30px);
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+header p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin: 0;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+@media (min-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 2.4fr) minmax(220px, 1fr); }
+}
+.chart-card {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 1.5rem 1rem;
+}
+.chart-card h2 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+.chart-card .sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.stat-card {
+  border-radius: 12px;
+  padding: 14px 16px;
+  border-left: 4px solid transparent;
+}
+.stat-card .label {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.stat-card .value {
+  font-size: 21px;
+  font-weight: 700;
+}
+.validation {
+  margin-top: 1.5rem;
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.validation h2 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+.validation .sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+.logbook {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+}
+.logbook-group + .logbook-group {
+  padding-top: 1.7rem;
+  border-top: 1px dashed var(--tan);
+}
+.logbook-group h3 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--maroon);
+  margin: 0 0 0.9rem;
+}
+.entry {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 1rem;
+}
+.entry:last-child { margin-bottom: 0; }
+.entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+.entry p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 62ch;
+}
+.entry p .tag {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--maroon);
+}
+.entry p .num {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.entry p .redondeo {
+  color: var(--coral);
+  font-weight: 700;
+}
+footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 15 C16 10, 8 10, 6 14 C4 18, 10 20, 20 17 C30 20, 36 18, 34 14 C32 10, 24 10, 20 15 Z" fill="none" stroke="var(--maroon)" stroke-width="2"/>
+        <path d="M20 17 L15 32 L18 29 L20 34 L22 29 L25 32 Z" fill="none" stroke="var(--maroon)" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">Hilo Rojo</div>
+        <span class="brand-since">SINCE 2026</span>
+      </div>
+    </div>
+    <div class="eyebrow">Control estadístico de proceso &middot; subproceso de medición y corte</div>
+    <h1>Carta de control &mdash; desperdicio de material</h1>
+    <p>Turno de 1:00&nbsp;pm a 6:00&nbsp;pm &middot; 21 subgrupos &middot; frecuencia de muestreo de 15 min &middot; n = 5</p>
+  </header>
+
+  <div class="layout">
+    <div class="chart-card">
+      <h2>Promedio de material desperdiciado (cm&sup2;)</h2>
+      <p class="sub">Cada punto representa el promedio de 5 mediciones tomadas cada 15 minutos</p>
+      <svg width="100%" viewBox="0 0 760 480" role="img">
+        <title>Carta de control de 1:00 pm a 6:00 pm</title>
+        <desc>21 subgrupos espaciados cada 15 minutos desde la 1:00 pm hasta las 6:00 pm, con línea central LC, límites LCS/LCI y ancho de límite de 3.04 por sigma</desc>
+        <line x1="70" y1="30" x2="70" y2="340" stroke="var(--text-muted)" stroke-width="1"/>
+        <line x1="70" y1="65" x2="610" y2="65" stroke="var(--pink)" stroke-width="1.6"/>
+        <text x="618" y="69" font-size="12" font-weight="700" fill="var(--pink)">LCS</text>
+        <line x1="70" y1="185" x2="610" y2="185" stroke="var(--maroon)" stroke-width="1.6"/>
+        <text x="618" y="189" font-size="12" font-weight="700" fill="var(--maroon)">LC</text>
+        <line x1="70" y1="305" x2="610" y2="305" stroke="var(--amber)" stroke-width="1.6"/>
+        <text x="618" y="309" font-size="12" font-weight="700" fill="var(--amber)">LCI</text>
+        <path d="M634 65 L644 65 L644 120 L654 125 L644 130 L644 185 L634 185" fill="none" stroke="var(--pink)" stroke-width="1.3"/>
+        <text x="660" y="122" font-size="12" font-weight="700" fill="var(--pink)">3,04</text>
+        <text x="660" y="136" font-size="12" font-weight="700" fill="var(--pink)">&times; &sigma;</text>
+        <path d="M634 185 L644 185 L644 240 L654 245 L644 250 L644 305 L634 305" fill="none" stroke="var(--amber)" stroke-width="1.3"/>
+        <text x="660" y="242" font-size="12" font-weight="700" fill="var(--amber)">3,04</text>
+        <text x="660" y="256" font-size="12" font-weight="700" fill="var(--amber)">&times; &sigma;</text>
+        <rect id="nbox" fill="none" stroke="var(--maroon)" stroke-width="1.2" stroke-dasharray="3 3" rx="6"/>
+        <line id="nleader" stroke="var(--maroon)" stroke-width="1"/>
+        <text id="nlabel" font-size="12" font-weight="700" fill="var(--maroon)" text-anchor="middle">n = 5</text>
+        <g id="scatter"></g>
+        <line x1="70" y1="340" x2="610" y2="340" stroke="var(--text-muted)" stroke-width="1"/>
+        <g id="ticks"></g>
+        <g id="numbers"></g>
+        <g id="times"></g>
+        <text x="618" y="438" font-size="11" fill="var(--text-muted)">m</text>
+      </svg>
+      <div class="legend">
+        <span><i style="background:var(--pink)"></i>LCS &mdash; límite superior</span>
+        <span><i style="background:var(--maroon)"></i>LC &mdash; línea central</span>
+        <span><i style="background:var(--amber)"></i>LCI &mdash; límite inferior</span>
+        <span><i style="background:var(--coral);width:8px;height:8px;border-radius:50%"></i>Mediciones individuales (n = 5 por subgrupo)</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card" style="background:var(--maroon-soft);border-left-color:var(--maroon);color:var(--maroon)"><div class="label">Promedio (LC)</div><div class="value">100,73 cm&sup2;</div></div>
+      <div class="stat-card" style="background:var(--coral-soft);border-left-color:var(--coral);color:var(--coral)"><div class="label">Desviación</div><div class="value">2,7 cm&sup2;</div></div>
+      <div class="stat-card" style="background:var(--amber-soft);border-left-color:var(--amber);color:var(--amber)"><div class="label">Error aceptado</div><div class="value">1,2</div></div>
+      <div class="stat-card" style="background:var(--pink-soft);border-left-color:var(--pink);color:var(--pink)"><div class="label">Tamaño de subgrupo (n)</div><div class="value">5</div></div>
+      <div class="stat-card" style="background:var(--coral-soft);border-left-color:var(--coral);color:var(--coral)"><div class="label">Frecuencia de muestreo</div><div class="value">15 min</div></div>
+      <div class="stat-card" style="background:var(--maroon-soft);border-left-color:var(--maroon);color:var(--maroon)"><div class="label">ARL0</div><div class="value">420</div></div>
+    </div>
+  </div>
+
+  <div class="validation">
+    <h2>Cuaderno de cálculo</h2>
+    <p class="sub">Cómo se llegó a cada número de la carta, y en qué queda una vez se redondea a lo que se usa en el taller</p>
+    <div class="logbook">
+      <div class="logbook-group">
+        <h3>Cuántos subgrupos y cada cuánto se mide</h3>
+        <div class="entry"><p>La cuenta de <span class="tag">M</span> da <span class="num">20,70</span> subgrupos; en el taller no se puede medir un pedazo de subgrupo, así que se trabaja con <span class="redondeo">21</span> subgrupos para organizar la recolección del desperdicio durante el turno.</p></div>
+        <div class="entry"><p>El turno completo son <span class="num">300</span> minutos disponibles para levantar la carta, es decir, cinco horas parejas de 1:00 a 6:00 pm.</p></div>
+        <div class="entry"><p>La frecuencia de muestreo <span class="tag">f</span> queda en <span class="num">15</span> minutos, de modo que cada subgrupo se recoja cómodamente dentro de ese tiempo de producción.</p></div>
+      </div>
+
+      <div class="logbook-group">
+        <h3>Qué tan sensible es la carta</h3>
+        <div class="entry"><p>La significancia <span class="tag">alpha</span> queda en <span class="num">0,0024</span>: esa es la probabilidad de que salte una falsa alarma sin que el proceso esté realmente descontrolado.</p></div>
+        <div class="entry"><p>De la distribución normal se obtiene un valor <span class="tag">Z</span> de <span class="num">0,9988</span>.</p></div>
+        <div class="entry"><p>Con eso, el ancho de los límites <span class="tag">L</span> queda en <span class="num">3,04</span>, cumpliendo la condición de no dejarlo justo en 3,0.</p></div>
+      </div>
+
+      <div class="logbook-group">
+        <h3>Tolerancia y qué tan buena es la carta detectando fallas</h3>
+        <div class="entry"><p>Se acepta una tolerancia <span class="tag">T</span> de <span class="num">1,65 cm²</span> de desperdicio de material por pieza.</p></div>
+        <div class="entry"><p>Reemplazando en la fórmula de la potencia, un extremo da <span class="num">&minus;0,65</span> y el otro <span class="num">&minus;6,73</span>.</p></div>
+        <div class="entry"><p>Con esos valores, la potencia de la carta queda en <span class="num">0,74</span>: más de un 76% de probabilidad de detectar un punto fuera de control, así que la tolerancia y el tamaño de subgrupo escogidos funcionan bien para este proceso.</p></div>
+        <div class="entry"><p>Queda entonces un beta de <span class="num">0,26</span>: alrededor de un 26% de probabilidad de que un punto sí esté fuera de control y la carta no lo detecte.</p></div>
+      </div>
+
+      <div class="logbook-group">
+        <h3>Qué tan rápido se entera uno de que algo salió mal</h3>
+        <div class="entry"><p>El <span class="tag">ARL1</span> da <span class="num">1,35</span> subgrupos; como no existen subgrupos fraccionados, en la práctica la carta avisa en <span class="redondeo">2</span> subgrupos una vez ocurre el corrimiento.</p></div>
+        <div class="entry"><p>Eso se traduce en un <span class="tag">ATS</span> de <span class="num">16,16</span> minutos, que redondeando la frecuencia queda en <span class="redondeo">16 minutos</span> para detectar la falla.</p></div>
+        <div class="entry"><p>En total, durante el turno se miden <span class="num">105</span> piezas.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Hilo Rojo &middot; 21 subgrupos &middot; 20 intervalos &times; 15 min = 300 min = 5 horas exactas &middot; 1:00 pm &rarr; 6:00 pm</footer>
+</div>
+
+<script>
+(function(){
+var n=21, x0=110, x1=610, y1=340, lc=185, lcs=65, lci=305;
+var spacing=(x1-x0)/(n-1);
+var scatter=document.getElementById('scatter');
+var ticks=document.getElementById('ticks');
+var numbers=document.getElementById('numbers');
+var times=document.getElementById('times');
+var startMin=13*60;
+var interval=15;
+function fmt(min){
+  var h=Math.floor(min/60), m=Math.round(min%60);
+  var ap=h>=12?'pm':'am';
+  var h12=h%12; if(h12===0) h12=12;
+  var mm=(m<10?'0':'')+m;
+  return h12+':'+mm+' '+ap;
+}
+var textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trim() || '#2c1b12';
+var mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--text-muted').trim() || '#a08a74';
+var dotColor = getComputedStyle(document.documentElement).getPropertyValue('--coral').trim() || '#e2653b';
+var minY=1e9, maxY=-1e9;
+for(var i=0;i<n;i++){
+  var cx=x0+i*spacing;
+  var amp=16+12*Math.abs(Math.sin(i*0.7+1));
+  var shift=8*Math.sin(i*0.5);
+  var offs=[-1,-0.5,0,0.5,1];
+  for(var k=0;k<5;k++){
+    var jitter=3*Math.sin(i*3+k*2);
+    var cy=lc+shift+offs[k]*amp+jitter;
+    if(cy<lcs+8) cy=lcs+8;
+    if(cy>lci-8) cy=lci-8;
+    if(i===0){ if(cy<minY) minY=cy; if(cy>maxY) maxY=cy; }
+    var c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',cx.toFixed(1));
+    c.setAttribute('cy',cy.toFixed(1));
+    c.setAttribute('r','2.6');
+    c.setAttribute('fill',dotColor);
+    scatter.appendChild(c);
+  }
+  var tick=document.createElementNS('http://www.w3.org/2000/svg','line');
+  tick.setAttribute('x1',cx); tick.setAttribute('x2',cx);
+  tick.setAttribute('y1',y1); tick.setAttribute('y2',y1+5);
+  tick.setAttribute('stroke',mutedColor); tick.setAttribute('stroke-width','0.5');
+  ticks.appendChild(tick);
+  var num=document.createElementNS('http://www.w3.org/2000/svg','text');
+  num.setAttribute('x',cx); num.setAttribute('y',y1+17);
+  num.setAttribute('text-anchor','middle');
+  num.setAttribute('font-size','9');
+  num.setAttribute('fill',mutedColor);
+  num.textContent=(i+1);
+  numbers.appendChild(num);
+  var tm=document.createElementNS('http://www.w3.org/2000/svg','text');
+  tm.setAttribute('transform','translate('+cx+','+(y1+30)+') rotate(-55)');
+  tm.setAttribute('text-anchor','end');
+  tm.setAttribute('font-size','9');
+  tm.setAttribute('fill',textColor);
+  tm.textContent=fmt(startMin+i*interval).replace(' pm','').replace(' am','');
+  times.appendChild(tm);
+}
+var boxTop=minY-7, boxBot=maxY+7, boxX=x0-13, boxW=26, boxH=boxBot-boxTop;
+var nbox=document.getElementById('nbox');
+nbox.setAttribute('x',boxX); nbox.setAttribute('y',boxTop);
+nbox.setAttribute('width',boxW); nbox.setAttribute('height',boxH);
+var labelY=boxTop-16;
+var nleader=document.getElementById('nleader');
+nleader.setAttribute('x1',x0); nleader.setAttribute('y1',labelY+6);
+nleader.setAttribute('x2',x0); nleader.setAttribute('y2',boxTop);
+var nlabel=document.getElementById('nlabel');
+nlabel.setAttribute('x', x0);
+nlabel.setAttribute('y', labelY);
+})();
+</script>
+</body>
+</html>
