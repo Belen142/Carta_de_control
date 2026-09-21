@@ -1,6 +1,6 @@
 # Hilo Rojo
 ## ¿Quiénes somos?
-<img src="https://github.com/yeseniaalvarado-design/Sistema-de-solicitudes-de-veterinaria/blob/8b9c763bffd91cda273fa6245b274a2dc4be8105/Logo%20Pet%20Service.png" alt="Imagen subida" width="300px">
+<img src="https://github.com/yeseniaalvarado-design/Carta_de_control/blob/4dab4986d2386117a866bba59b77f501d81acbe7/LOGO%20HILO%20ROJO.jpeg">
 
 Somos una empresa dedicada a la producción de cajas de regalo, fundada en 2026 por un grupo de amigos estudiantes de la Universidad de Antioquia. Más allá de fabricar cajas, nuestro propósito es crear recuerdos y ayudar a preservarlos en el tiempo. Por ello, nos enfocamos en ofrecer un producto de alta calidad que garantice la plena satisfacción del cliente, cuidando especialmente su diseño y estética, para que cada caja se convierta en parte esencial de un momento memorable.
 
