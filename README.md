@@ -1,6 +1,6 @@
 # Hilo Rojo
 ## ¿Quiénes somos?
-<img src="https://github.com/yeseniaalvarado-design/Carta_de_control/blob/4dab4986d2386117a866bba59b77f501d81acbe7/LOGO%20HILO%20ROJO.jpeg">
+<img src="https://github.com/yeseniaalvarado-design/Carta_de_control/blob/4dab4986d2386117a866bba59b77f501d81acbe7/LOGO%20HILO%20ROJO.jpeg" alt="Imagen subida" width="300px">
 
 Somos una empresa dedicada a la producción de cajas de regalo, fundada en 2026 por un grupo de amigos estudiantes de la Universidad de Antioquia. Más allá de fabricar cajas, nuestro propósito es crear recuerdos y ayudar a preservarlos en el tiempo. Por ello, nos enfocamos en ofrecer un producto de alta calidad que garantice la plena satisfacción del cliente, cuidando especialmente su diseño y estética, para que cada caja se convierta en parte esencial de un momento memorable.
 
