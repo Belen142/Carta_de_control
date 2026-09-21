@@ -116,7 +116,7 @@ header h1 {
   font-family: "Playfair Display", serif;
   font-size: clamp(22px, 3.6vw, 30px);
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 18px 0 0;
 }
 header p {
   color: var(--text-secondary);
@@ -205,10 +205,9 @@ header p {
   border-top: 1px dashed var(--tan);
 }
 .logbook-group h3 {
-  font-family: "Playfair Display", serif;
   font-style: italic;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 15px;
   color: var(--maroon);
   margin: 0 0 0.9rem;
 }
@@ -223,10 +222,11 @@ header p {
   position: absolute;
   left: 0;
   top: 6px;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--coral);
+  background: var(--maroon);
+  opacity: 0.5;
 }
 .entry p {
   margin: 0;
@@ -236,10 +236,8 @@ header p {
   max-width: 62ch;
 }
 .entry p .tag {
-  font-family: "Playfair Display", serif;
   font-weight: 700;
-  font-style: italic;
-  color: var(--maroon);
+  color: var(--text-primary);
 }
 .entry p .num {
   font-weight: 700;
@@ -270,9 +268,7 @@ footer {
         <span class="brand-since">SINCE 2026</span>
       </div>
     </div>
-    <div class="eyebrow">Control estadístico de proceso &middot; subproceso de medición y corte</div>
-    <h1>Carta de control &mdash; desperdicio de material</h1>
-    <p>Turno de 1:00&nbsp;pm a 6:00&nbsp;pm &middot; 21 subgrupos &middot; frecuencia de muestreo de 15 min &middot; n = 5</p>
+    <h1>Carta de control: Desperdicio de material (cm&sup2;)</h1>
   </header>
 
   <div class="layout">
@@ -328,21 +324,21 @@ footer {
     <p class="sub">Cómo se llegó a cada número de la carta, y en qué queda una vez se redondea a lo que se usa en el taller</p>
     <div class="logbook">
       <div class="logbook-group">
-        <h3>Cuántos subgrupos y cada cuánto se mide</h3>
+        <h3>¿Cuántos subgrupos y cada cuánto se mide?</h3>
         <div class="entry"><p>La cuenta de <span class="tag">M</span> da <span class="num">20,70</span> subgrupos; en el taller no se puede medir un pedazo de subgrupo, así que se trabaja con <span class="redondeo">21</span> subgrupos para organizar la recolección del desperdicio durante el turno.</p></div>
         <div class="entry"><p>El turno completo son <span class="num">300</span> minutos disponibles para levantar la carta, es decir, cinco horas parejas de 1:00 a 6:00 pm.</p></div>
         <div class="entry"><p>La frecuencia de muestreo <span class="tag">f</span> queda en <span class="num">15</span> minutos, de modo que cada subgrupo se recoja cómodamente dentro de ese tiempo de producción.</p></div>
       </div>
 
       <div class="logbook-group">
-        <h3>Qué tan sensible es la carta</h3>
+        <h3>¿Qué tan sensible es la carta?</h3>
         <div class="entry"><p>La significancia <span class="tag">alpha</span> queda en <span class="num">0,0024</span>: esa es la probabilidad de que salte una falsa alarma sin que el proceso esté realmente descontrolado.</p></div>
         <div class="entry"><p>De la distribución normal se obtiene un valor <span class="tag">Z</span> de <span class="num">0,9988</span>.</p></div>
         <div class="entry"><p>Con eso, el ancho de los límites <span class="tag">L</span> queda en <span class="num">3,04</span>, cumpliendo la condición de no dejarlo justo en 3,0.</p></div>
       </div>
 
       <div class="logbook-group">
-        <h3>Tolerancia y qué tan buena es la carta detectando fallas</h3>
+        <h3>¿Tolerancia y qué tan buena es la carta detectando fallas?</h3>
         <div class="entry"><p>Se acepta una tolerancia <span class="tag">T</span> de <span class="num">1,65 cm²</span> de desperdicio de material por pieza.</p></div>
         <div class="entry"><p>Reemplazando en la fórmula de la potencia, un extremo da <span class="num">&minus;0,65</span> y el otro <span class="num">&minus;6,73</span>.</p></div>
         <div class="entry"><p>Con esos valores, la potencia de la carta queda en <span class="num">0,74</span>: más de un 76% de probabilidad de detectar un punto fuera de control, así que la tolerancia y el tamaño de subgrupo escogidos funcionan bien para este proceso.</p></div>
@@ -350,7 +346,7 @@ footer {
       </div>
 
       <div class="logbook-group">
-        <h3>Qué tan rápido se entera uno de que algo salió mal</h3>
+        <h3>¿Qué tan rápido se entera uno de que algo salió mal?</h3>
         <div class="entry"><p>El <span class="tag">ARL1</span> da <span class="num">1,35</span> subgrupos; como no existen subgrupos fraccionados, en la práctica la carta avisa en <span class="redondeo">2</span> subgrupos una vez ocurre el corrimiento.</p></div>
         <div class="entry"><p>Eso se traduce en un <span class="tag">ATS</span> de <span class="num">16,16</span> minutos, que redondeando la frecuencia queda en <span class="redondeo">16 minutos</span> para detectar la falla.</p></div>
         <div class="entry"><p>En total, durante el turno se miden <span class="num">105</span> piezas.</p></div>
@@ -358,7 +354,6 @@ footer {
     </div>
   </div>
 
-  <footer>Hilo Rojo &middot; 21 subgrupos &middot; 20 intervalos &times; 15 min = 300 min = 5 horas exactas &middot; 1:00 pm &rarr; 6:00 pm</footer>
 </div>
 
 <script>
