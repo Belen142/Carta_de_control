@@ -19,3 +19,6 @@ Ingeniería industrial.
 
 Yesenia Paola Alvarado Arteaga - 
 Ingeniería industrial.
+
+## Página web
+Carta de control: https://yeseniaalvarado-design.github.io/Carta_de_control/
