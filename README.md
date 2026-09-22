@@ -20,8 +20,10 @@ Ingeniería industrial.
 Yesenia Paola Alvarado Arteaga - 
 Ingeniería industrial.
 
+## Desarrollo del Proyecto
+La carta de control fue desarrollada mediante el editor de código Sublime Text e indexada en GitHub. En este repositorio se consolida la descripción general de la empresa, la presentación del equipo de desarrolladores y el enlace de despliegue a la página web donde se visualiza la carta de control.
+
 ## Página web
 Carta de control: https://yeseniaalvarado-design.github.io/Carta_de_control/
 
-## Desarrollo del Proyecto
-La carta de control fue desarrollada mediante el editor de código Sublime Text e indexada en GitHub. En este repositorio se consolida la descripción general de la empresa, la presentación del equipo de desarrolladores y el enlace de despliegue a la página web donde se visualiza la carta de control.
+## *Cajas que te marcan el alma* ♡ 
