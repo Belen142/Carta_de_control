@@ -14,7 +14,7 @@ En Hilo Rojo nos dedicamos al diseño y elaboración de cajas de regalo, buscand
 Juan Pablo Marín Duque - 
 Ingeniería industrial.
 
-María Belén Núñez Acosta - 
+María Belén Nuñez Acosta - 
 Ingeniería industrial.
 
 Yesenia Paola Alvarado Arteaga - 
