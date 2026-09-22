@@ -26,4 +26,4 @@ La carta de control fue desarrollada mediante el editor de código Sublime Text 
 ## Página web
 Carta de control: https://yeseniaalvarado-design.github.io/Carta_de_control/
 
-## *Cajas que te marcan el alma* ♡ 
+*Cajas que te marcan el alma* ♡ 
