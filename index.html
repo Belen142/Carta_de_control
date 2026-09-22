@@ -339,16 +339,16 @@ footer {
 
       <div class="logbook-group">
         <h3>¿Tolerancia y qué tan buena es la carta detectando fallas?</h3>
-        <div class="entry"><p>Se acepta una tolerancia <span class="tag">T</span> de <span class="num">1,65 cm²</span> de desperdicio de material por pieza.</p></div>
-        <div class="entry"><p>Reemplazando en la fórmula de la potencia, un extremo da <span class="num">&minus;0,65</span> y el otro <span class="num">&minus;6,73</span>.</p></div>
-        <div class="entry"><p>Con esos valores, la potencia de la carta queda en <span class="num">0,74</span>: más de un 76% de probabilidad de detectar un punto fuera de control, así que la tolerancia y el tamaño de subgrupo escogidos funcionan bien para este proceso.</p></div>
-        <div class="entry"><p>Queda entonces un beta de <span class="num">0,26</span>: alrededor de un 26% de probabilidad de que un punto sí esté fuera de control y la carta no lo detecte.</p></div>
+        <div class="entry"><p>Se acepta una tolerancia <span class="tag">&tau;</span> de <span class="num">1,7 cm²</span> de desperdicio de material por pieza.</p></div>
+        <div class="entry"><p>Reemplazando en la fórmula de la potencia, un extremo da <span class="num">&minus;0,76</span> y el otro <span class="num">&minus;6,84</span>.</p></div>
+        <div class="entry"><p>Con esos valores, la potencia de la carta queda en <span class="num">0,78</span>: más de un 76% de probabilidad de detectar un punto fuera de control, así que la tolerancia y el tamaño de subgrupo escogidos funcionan bien para este proceso.</p></div>
+        <div class="entry"><p>Queda entonces un beta de <span class="num">0,22</span>: alrededor de un 22% de probabilidad de que un punto sí esté fuera de control y la carta no lo detecte.</p></div>
       </div>
 
       <div class="logbook-group">
         <h3>¿Qué tan rápido se entera uno de que algo salió mal?</h3>
-        <div class="entry"><p>El <span class="tag">ARL1</span> da <span class="num">1,35</span> subgrupos; como no existen subgrupos fraccionados, en la práctica la carta avisa en <span class="redondeo">2</span> subgrupos una vez ocurre el corrimiento.</p></div>
-        <div class="entry"><p>Eso se traduce en un <span class="tag">ATS</span> de <span class="num">16,16</span> minutos, que redondeando la frecuencia queda en <span class="redondeo">16 minutos</span> para detectar la falla.</p></div>
+        <div class="entry"><p>Se estima que la carta generará un punto fuera de control, en promedio, después de aproximadamente <span class="num">1,29</span> subgrupos.</p></div>
+        <div class="entry"><p>El <span class="tag">ATS</span> queda en <span class="num">15,44</span>; se estima que la señal para detectar un fuera de control pasa en promedio cada <span class="redondeo">16 minutos</span>, teniendo en cuenta que la frecuencia es de 15.</p></div>
         <div class="entry"><p>En total, durante el turno se miden <span class="num">105</span> piezas.</p></div>
       </div>
     </div>
